@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB4AE2AC255F182400A66B2B /* github_repoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE2AB255F182400A66B2B /* github_repoApp.swift */; };
-		AB4AE2AE255F182400A66B2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE2AD255F182400A66B2B /* ContentView.swift */; };
+		AB4AE2AC255F182400A66B2B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE2AB255F182400A66B2B /* MainView.swift */; };
 		AB4AE2B0255F182500A66B2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB4AE2AF255F182500A66B2B /* Assets.xcassets */; };
 		AB4AE2B3255F182500A66B2B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB4AE2B2255F182500A66B2B /* Preview Assets.xcassets */; };
 		AB4AE2BE255F182500A66B2B /* github_repoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE2BD255F182500A66B2B /* github_repoTests.swift */; };
 		AB4AE2C9255F182500A66B2B /* github_repoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE2C8255F182500A66B2B /* github_repoUITests.swift */; };
+		AB4AE2EA255F1AD100A66B2B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE2E9255F1AD100A66B2B /* SearchView.swift */; };
+		AB4AE2F2255F1E9D00A66B2B /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE2F1255F1E9D00A66B2B /* SearchResultView.swift */; };
+		AB4AE2F8255F233000A66B2B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE2F7255F233000A66B2B /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +36,7 @@
 
 /* Begin PBXFileReference section */
 		AB4AE2A8255F182400A66B2B /* github-repo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "github-repo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB4AE2AB255F182400A66B2B /* github_repoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = github_repoApp.swift; sourceTree = "<group>"; };
-		AB4AE2AD255F182400A66B2B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AB4AE2AB255F182400A66B2B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		AB4AE2AF255F182500A66B2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB4AE2B2255F182500A66B2B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB4AE2B4255F182500A66B2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +46,9 @@
 		AB4AE2C4255F182500A66B2B /* github-repoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "github-repoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4AE2C8255F182500A66B2B /* github_repoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = github_repoUITests.swift; sourceTree = "<group>"; };
 		AB4AE2CA255F182500A66B2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB4AE2E9255F1AD100A66B2B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		AB4AE2F1255F1E9D00A66B2B /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
+		AB4AE2F7255F233000A66B2B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +99,10 @@
 		AB4AE2AA255F182400A66B2B /* github-repo */ = {
 			isa = PBXGroup;
 			children = (
-				AB4AE2AB255F182400A66B2B /* github_repoApp.swift */,
-				AB4AE2AD255F182400A66B2B /* ContentView.swift */,
+				AB4AE2F6255F232200A66B2B /* Utils */,
+				AB4AE2E2255F1A1A00A66B2B /* Views */,
+				AB4AE2E1255F1A1100A66B2B /* Models */,
+				AB4AE2E0255F1A0900A66B2B /* ViewModels */,
 				AB4AE2AF255F182500A66B2B /* Assets.xcassets */,
 				AB4AE2B4255F182500A66B2B /* Info.plist */,
 				AB4AE2B1255F182500A66B2B /* Preview Content */,
@@ -128,6 +134,38 @@
 				AB4AE2CA255F182500A66B2B /* Info.plist */,
 			);
 			path = "github-repoUITests";
+			sourceTree = "<group>";
+		};
+		AB4AE2E0255F1A0900A66B2B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AB4AE2E1255F1A1100A66B2B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AB4AE2E2255F1A1A00A66B2B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB4AE2AB255F182400A66B2B /* MainView.swift */,
+				AB4AE2E9255F1AD100A66B2B /* SearchView.swift */,
+				AB4AE2F1255F1E9D00A66B2B /* SearchResultView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AB4AE2F6255F232200A66B2B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AB4AE2F7255F233000A66B2B /* Color.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +297,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB4AE2AE255F182400A66B2B /* ContentView.swift in Sources */,
-				AB4AE2AC255F182400A66B2B /* github_repoApp.swift in Sources */,
+				AB4AE2EA255F1AD100A66B2B /* SearchView.swift in Sources */,
+				AB4AE2F8255F233000A66B2B /* Color.swift in Sources */,
+				AB4AE2F2255F1E9D00A66B2B /* SearchResultView.swift in Sources */,
+				AB4AE2AC255F182400A66B2B /* MainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

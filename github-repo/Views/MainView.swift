@@ -8,10 +8,16 @@
 import SwiftUI
 
 @main
-struct github_repoApp: App {
+struct MainView: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SearchView()
         }
+    }
+}
+
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchView()
     }
 }
