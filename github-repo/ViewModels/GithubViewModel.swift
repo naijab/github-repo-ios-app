@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class GithubViewModel: ObservableObject {
     
@@ -13,7 +14,7 @@ class GithubViewModel: ObservableObject {
     @Published var errorMessage: String = "Something Wrong"
     @Published var isLoading: Bool = true
     
-    func fetchGithubRepoByUsername(username: String) {
+    func fetchByUsername(username: String) {
         GithubService().getRepoByUsername(username).subscribe(
             onNext: { data in
                 self.repositories = data

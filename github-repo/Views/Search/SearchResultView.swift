@@ -8,25 +8,27 @@
 import SwiftUI
 
 struct SearchResultView: View {
+    
+    @ObservedObject var githubViewModel = GithubViewModel()
 
     let keyword: String
     
     var body: some View {
         NavigationView {
-            List {
-                RepoItemView(title: "Apple", stars: "23")
-                RepoItemView(title: "Apple", stars: "23")
-                RepoItemView(title: "Apple", stars: "23")
-                RepoItemView(title: "Apple", stars: "23")
-                RepoItemView(title: "Apple", stars: "23")
+            VStack {
+                List(githubViewModel.repositories, id: \.nodeID) {repo in
+                    RepoItemView(repo: repo)
+                }
+                .navigationBarTitle(keyword)
+            }.onAppear {
+                self.githubViewModel.fetchByUsername(username: keyword)
             }
         }
-        .navigationTitle(keyword)
     }
 }
 
 struct SearchResultView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchResultView(keyword: "Demo")
+        SearchResultView(keyword: "Apple")
     }
 }

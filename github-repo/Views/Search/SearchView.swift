@@ -32,7 +32,7 @@ struct SearchView: View {
                     })
             }
             .padding(.horizontal, 30)
-            .navigationTitle(Text("Github Repository"))
+            .navigationBarTitle(Text("Github Repository"))
         }
         
     }
