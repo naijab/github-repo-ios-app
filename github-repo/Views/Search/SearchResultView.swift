@@ -55,7 +55,8 @@ struct SearchResultView: View {
         .navigationBarItems(leading: Button(action: {
             self.presentationMode.wrappedValue.dismiss()
         }) {
-                Image(systemName: "arrow.left")
+            Image(systemName: "arrow.left")
+                .foregroundColor(Color.primary)
         })
         .onAppear {
             self.githubViewModel.fetchProfile(username: keyword)
