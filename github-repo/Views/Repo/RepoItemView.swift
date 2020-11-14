@@ -22,8 +22,14 @@ struct RepoItemView: View {
                 .foregroundColor(Color.primary)
                 .bold()
           
-            Text("\(repo.stargazersCount)")
-                .foregroundColor(Color.gray)
+            HStack {
+                Image("StarIcon")
+                    .resizable()
+                    .frame(width: 24, height: 24, alignment: .center)
+                    .padding(.trailing, 4)
+                Text("\(repo.stargazersCount)")
+                    .foregroundColor(Color.gray)
+            }
             
             ScrollView (.horizontal, showsIndicators: false) {
                 HStack {
