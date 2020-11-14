@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GithubContributor: Codable {
+struct GithubContributor: Codable, Hashable {
     let login: String
     let id: Int
     let nodeID: String

@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct GithubRepository: Codable {
+struct GithubRepository: Codable, Hashable {
     let id: Int
     let nodeID, name, fullName: String
     let githubRepositoryPrivate: Bool
     let owner: GithubOwner
     let htmlURL: String
-    let githubRepositoryDescription: String
+    let githubRepositoryDescription: String?
     let fork: Bool
     let url, forksURL: String
     let keysURL, collaboratorsURL: String
@@ -34,20 +34,19 @@ struct GithubRepository: Codable {
     let issuesURL, pullsURL, milestonesURL, notificationsURL: String
     let labelsURL, releasesURL: String
     let deploymentsURL: String
-    let createdAt, updatedAt, pushedAt: Date
+    let createdAt, updatedAt, pushedAt: String
     let gitURL, sshURL: String
     let cloneURL: String
     let svnURL: String
-    let homepage: String
+    let homepage: String?
     let size, stargazersCount, watchersCount: Int
-    let language: String
+    let language: String?
     let hasIssues, hasProjects, hasDownloads, hasWiki: Bool
     let hasPages: Bool
     let forksCount: Int
-    let mirrorURL: JSONNull?
+    let mirrorURL: String?
     let archived, disabled: Bool
     let openIssuesCount: Int
-    let license: JSONNull?
     let forks, openIssues, watchers: Int
     let defaultBranch: String
 
@@ -117,7 +116,7 @@ struct GithubRepository: Codable {
         case mirrorURL = "mirror_url"
         case archived, disabled
         case openIssuesCount = "open_issues_count"
-        case license, forks
+        case forks
         case openIssues = "open_issues"
         case watchers
         case defaultBranch = "default_branch"

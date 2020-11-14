@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GithubOwner: Codable {
+struct GithubOwner: Codable, Hashable {
     let login: String
     let id: Int
     let nodeID: String
