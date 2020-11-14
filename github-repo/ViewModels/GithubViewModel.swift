@@ -13,26 +13,28 @@ class GithubViewModel: ObservableObject {
     private let githubService: GithubService = GithubServiceImpl()
     
     @Published var repositories: [GithubRepository] = []
-    @Published var repositoriesErrorMessage: String = "Something Wrong"
+    @Published var repositoriesErrorMessage: String = ""
     @Published var repositoriesIsLoading: Bool = false
     
     @Published var contributors: [GithubContributor] = []
-    @Published var contributorsErrorMessage: String = "Something Wrong"
+    @Published var contributorsErrorMessage: String = ""
     @Published var contributorsIsLoading: Bool = false
     
     func fetchRepoByUsername(username: String) {
         self.repositoriesIsLoading = true
-        githubService.getRepoByUsername(username, page: 1, perPage: 5).subscribe(
-            onNext: { data in
-                self.repositories = data
-                print("Data : \(data)")
-            },
-            onError: { error in
-                self.repositoriesErrorMessage = "Cannot Find This Username"
-            },
-            onCompleted: {
-                self.repositoriesIsLoading = false
-            }
+        githubService.getRepoByUsername(username, page: 1, perPage: 5)
+            .subscribe(
+                onNext: { data in
+                    self.repositories = data
+                    print("Data : \(data)")
+                },
+                onError: { error in
+                    self.repositoriesErrorMessage = "Cannot Find This Username"
+                    self.repositoriesIsLoading = false
+                },
+                onCompleted: {
+                    self.repositoriesIsLoading = false
+                }
         )
     }
     
@@ -42,16 +44,17 @@ class GithubViewModel: ObservableObject {
                                                page: 1,
                                                perPage: 5)
             .subscribe(
-            onNext: { data in
-                self.contributors = data
-                print("Data : \(data)")
-            },
-            onError: { error in
-                self.contributorsErrorMessage = "Cannot Fetch Contributor"
-            },
-            onCompleted: {
-                self.contributorsIsLoading = false
-            }
+                onNext: { data in
+                    self.contributors = data
+                    print("Data : \(data)")
+                },
+                onError: { error in
+                    self.contributorsErrorMessage = "Cannot Fetch Contributor"
+                    self.contributorsIsLoading = false
+                },
+                onCompleted: {
+                    self.contributorsIsLoading = false
+                }
         )
     }
     

@@ -50,7 +50,7 @@ class GithubServiceImpl: GithubService {
                            method: .get, encoding: JSONEncoding.default, headers: nil)
                     .validate()
                     .response { response in
-                        print("=>> Fetch! Contributor Start")
+                        print("=>> Fetch! Contributor Start ===> \(username)")
                         guard let responseData = response.data else {
                             return observer.onCompleted()
                         }

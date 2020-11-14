@@ -9,9 +9,14 @@ import SwiftUI
 
 struct RepoItemView: View {
     
-    @ObservedObject var githubViewModel = GithubViewModel()
+    @ObservedObject private var githubViewModel = GithubViewModel()
     
-    let repo: GithubRepository
+    private let repo: GithubRepository
+    
+    init(repo: GithubRepository) {
+        self.repo = repo
+        githubViewModel.fetchContributor(username: repo.owner.login, repoName: repo.name)
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: nil, content: {
@@ -30,6 +35,17 @@ struct RepoItemView: View {
             
             ScrollView (.horizontal, showsIndicators: false) {
                 HStack {
+                    if (githubViewModel.contributorsIsLoading) {
+                        ProgressView()
+                    }
+                    
+                    if (githubViewModel.contributorsErrorMessage != "") {
+                        Text(githubViewModel.contributorsErrorMessage)
+                            .font(.subheadline)
+                            .bold()
+                            .foregroundColor(.red)
+                    }
+                    
                     ForEach(githubViewModel.contributors, id: \.self) { contributor in
                         ContributorItem(title: contributor.login, avatar: contributor.avatarURL)
                     }
@@ -46,8 +62,5 @@ struct RepoItemView: View {
                 .stroke(Color.gray.opacity(0.5),
                         lineWidth: 1)
         )
-        .onAppear {
-            githubViewModel.fetchContributor(username: repo.owner.login, repoName: repo.name)
-        }
     }
 }
