@@ -21,7 +21,7 @@ struct SearchResultView: View {
                 }
                 .navigationBarTitle(keyword)
             }.onAppear {
-                self.githubViewModel.fetchByUsername(username: keyword)
+                self.githubViewModel.fetchRepoByUsername(username: keyword)
             }
         }
     }

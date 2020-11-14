@@ -9,13 +9,10 @@ import SwiftUI
 
 struct RepoItemView: View {
     
+    @ObservedObject var githubViewModel = GithubViewModel()
+    
     let repo: GithubRepository
 
-    init(repo: GithubRepository) {
-        self.repo = repo
-        print(repo)
-    }
-    
     var body: some View {
         VStack(alignment: .leading, spacing: nil, content: {
             Text(repo.name)
@@ -33,24 +30,24 @@ struct RepoItemView: View {
             
             ScrollView (.horizontal, showsIndicators: false) {
                 HStack {
-                    ContributorItem(title: "Apple", avatar: "https://picsum.photos/200/300")
-                    ContributorItem(title: "Apple 2", avatar: "https://picsum.photos/200/300")
-                    ContributorItem(title: "Apple 3", avatar: "https://picsum.photos/200/300")
-                    ContributorItem(title: "Apple 3", avatar: "https://picsum.photos/200/300")
-                    ContributorItem(title: "Apple 3", avatar: "https://picsum.photos/200/300")
-                    ContributorItem(title: "Apple 3", avatar: "https://picsum.photos/200/300")
+                    ForEach(githubViewModel.contributors, id: \.self) { contributor in
+                        ContributorItem(title: contributor.login, avatar: contributor.avatarURL)
+                    }
                 }
             }
-            .frame(height: 120)
+            .frame(height: 100)
         })
         .cornerRadius(10)
         .padding(.vertical, 10)
-        .padding(.leading, 10)
+        .padding(.leading, 16)
         .background(Color.repoBg)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
                 .stroke(Color.gray.opacity(0.5),
                         lineWidth: 1)
         )
+        .onAppear {
+            githubViewModel.fetchContributor(username: repo.owner.login, repoName: repo.name)
+        }
     }
 }

@@ -10,24 +10,50 @@ import RxSwift
 
 class GithubViewModel: ObservableObject {
     
-    @Published var repositories: [GithubRepository] = []
-    @Published var errorMessage: String = "Something Wrong"
-    @Published var isLoading: Bool = true
+    private let githubService: GithubService = GithubServiceImpl()
     
-    func fetchByUsername(username: String) {
-        GithubService().getRepoByUsername(username).subscribe(
+    @Published var repositories: [GithubRepository] = []
+    @Published var repositoriesErrorMessage: String = "Something Wrong"
+    @Published var repositoriesIsLoading: Bool = false
+    
+    @Published var contributors: [GithubContributor] = []
+    @Published var contributorsErrorMessage: String = "Something Wrong"
+    @Published var contributorsIsLoading: Bool = false
+    
+    func fetchRepoByUsername(username: String) {
+        self.repositoriesIsLoading = true
+        githubService.getRepoByUsername(username, page: 1, perPage: 5).subscribe(
             onNext: { data in
                 self.repositories = data
                 print("Data : \(data)")
             },
             onError: { error in
-                self.errorMessage = "Cannot Find This Username"
-                self.isLoading = false
+                self.repositoriesErrorMessage = "Cannot Find This Username"
             },
             onCompleted: {
-                self.isLoading = false
+                self.repositoriesIsLoading = false
             }
         )
     }
+    
+    func fetchContributor(username: String, repoName: String) {
+        githubService.getContributorByRepoName(username: username,
+                                               repoName: repoName,
+                                               page: 1,
+                                               perPage: 5)
+            .subscribe(
+            onNext: { data in
+                self.contributors = data
+                print("Data : \(data)")
+            },
+            onError: { error in
+                self.contributorsErrorMessage = "Cannot Fetch Contributor"
+            },
+            onCompleted: {
+                self.contributorsIsLoading = false
+            }
+        )
+    }
+    
     
 }

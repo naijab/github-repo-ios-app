@@ -20,13 +20,13 @@
 		AB4AE311255F2A9400A66B2B /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE310255F2A9400A66B2B /* RemoteImage.swift */; };
 		AB4AE31C255F35CA00A66B2B /* GithubContributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE31B255F35CA00A66B2B /* GithubContributor.swift */; };
 		AB4AE321255F35E000A66B2B /* GithubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE320255F35E000A66B2B /* GithubRepository.swift */; };
-		AB4AE326255F368300A66B2B /* JSONNull.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE325255F368300A66B2B /* JSONNull.swift */; };
 		AB4AE32E255F36A600A66B2B /* GithubOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE32D255F36A600A66B2B /* GithubOwner.swift */; };
 		AB4AE340255F3CF300A66B2B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AB4AE33F255F3CF300A66B2B /* Alamofire */; };
-		AB4AE346255F3D1900A66B2B /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE345255F3D1900A66B2B /* GithubService.swift */; };
+		AB4AE346255F3D1900A66B2B /* GithubServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE345255F3D1900A66B2B /* GithubServiceImpl.swift */; };
 		AB4AE34F255F3EB600A66B2B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = AB4AE34E255F3EB600A66B2B /* RxCocoa */; };
 		AB4AE351255F3EB600A66B2B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AB4AE350255F3EB600A66B2B /* RxSwift */; };
 		AB4AE35E255F46F400A66B2B /* GithubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE35D255F46F400A66B2B /* GithubViewModel.swift */; };
+		AB4AE38C255F61F700A66B2B /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE38B255F61F700A66B2B /* GithubService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,10 +66,10 @@
 		AB4AE310255F2A9400A66B2B /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		AB4AE31B255F35CA00A66B2B /* GithubContributor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubContributor.swift; sourceTree = "<group>"; };
 		AB4AE320255F35E000A66B2B /* GithubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepository.swift; sourceTree = "<group>"; };
-		AB4AE325255F368300A66B2B /* JSONNull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNull.swift; sourceTree = "<group>"; };
 		AB4AE32D255F36A600A66B2B /* GithubOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubOwner.swift; sourceTree = "<group>"; };
-		AB4AE345255F3D1900A66B2B /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
+		AB4AE345255F3D1900A66B2B /* GithubServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubServiceImpl.swift; sourceTree = "<group>"; };
 		AB4AE35D255F46F400A66B2B /* GithubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewModel.swift; sourceTree = "<group>"; };
+		AB4AE38B255F61F700A66B2B /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +123,7 @@
 		AB4AE2AA255F182400A66B2B /* github-repo */ = {
 			isa = PBXGroup;
 			children = (
+				AB4AE389255F61D900A66B2B /* Domain */,
 				AB4AE344255F3D0700A66B2B /* Services */,
 				AB4AE2F6255F232200A66B2B /* Utils */,
 				AB4AE2E2255F1A1A00A66B2B /* Views */,
@@ -172,7 +173,6 @@
 		AB4AE2E1255F1A1100A66B2B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AB4AE325255F368300A66B2B /* JSONNull.swift */,
 				AB4AE31B255F35CA00A66B2B /* GithubContributor.swift */,
 				AB4AE320255F35E000A66B2B /* GithubRepository.swift */,
 				AB4AE32D255F36A600A66B2B /* GithubOwner.swift */,
@@ -228,7 +228,23 @@
 		AB4AE344255F3D0700A66B2B /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				AB4AE345255F3D1900A66B2B /* GithubService.swift */,
+				AB4AE345255F3D1900A66B2B /* GithubServiceImpl.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AB4AE389255F61D900A66B2B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AB4AE38A255F61DE00A66B2B /* Services */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		AB4AE38A255F61DE00A66B2B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AB4AE38B255F61F700A66B2B /* GithubService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -373,14 +389,14 @@
 			files = (
 				AB4AE2EA255F1AD100A66B2B /* SearchView.swift in Sources */,
 				AB4AE2F8255F233000A66B2B /* Color.swift in Sources */,
-				AB4AE346255F3D1900A66B2B /* GithubService.swift in Sources */,
+				AB4AE346255F3D1900A66B2B /* GithubServiceImpl.swift in Sources */,
 				AB4AE35E255F46F400A66B2B /* GithubViewModel.swift in Sources */,
-				AB4AE326255F368300A66B2B /* JSONNull.swift in Sources */,
 				AB4AE311255F2A9400A66B2B /* RemoteImage.swift in Sources */,
 				AB4AE321255F35E000A66B2B /* GithubRepository.swift in Sources */,
 				AB4AE300255F24E200A66B2B /* RepoItemView.swift in Sources */,
 				AB4AE2F2255F1E9D00A66B2B /* SearchResultView.swift in Sources */,
 				AB4AE30B255F289300A66B2B /* ContributorItem.swift in Sources */,
+				AB4AE38C255F61F700A66B2B /* GithubService.swift in Sources */,
 				AB4AE32E255F36A600A66B2B /* GithubOwner.swift in Sources */,
 				AB4AE2AC255F182400A66B2B /* MainView.swift in Sources */,
 				AB4AE31C255F35CA00A66B2B /* GithubContributor.swift in Sources */,

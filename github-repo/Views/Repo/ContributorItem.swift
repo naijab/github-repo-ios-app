@@ -13,23 +13,31 @@ struct ContributorItem: View {
     
     var body: some View {
         VStack {
-            Text(title)
             RemoteImage(url: avatar)
                 .aspectRatio(contentMode: .fill)
                 .clipShape(Circle())
                 .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            Text(title)
+                .font(.caption)
         }
-        .padding()
+        .padding(.all, 10)
+        .frame(maxWidth: .infinity, alignment: .center)
         .background(Color.contributorBg)
-        .cornerRadius(6)
+        .cornerRadius(8)
     }
 }
 
 struct ContributorItem_Previews: PreviewProvider {
     static var previews: some View {
-        ContributorItem(
-            title: "Demo C",
-            avatar: "https://picsum.photos/200/300"
-        )
+        HStack {
+            ContributorItem(
+                title: "Demo C",
+                avatar: "https://picsum.photos/200/300"
+            )
+            ContributorItem(
+                title: "DemoC",
+                avatar: "https://picsum.photos/200/300"
+            )
+        }
     }
 }
