@@ -13,9 +13,9 @@ class GithubService {
     
     private let baseUrl = "https://api.github.com"
 
-    func getRepoByUsername(_ username : String) -> Observable<[GithubRepository]> {
+    func getRepoByUsername(_ username : String, page: Int = 1, perPage: Int = 5) -> Observable<[GithubRepository]> {
         return Observable<[GithubRepository]>.create {observer in
-            AF.request("\(self.baseUrl)/users/\(username)/repos", method: .get, encoding: JSONEncoding.default, headers: nil)
+            AF.request("\(self.baseUrl)/users/\(username)/repos?page=\(page)&per_page=\(perPage)", method: .get, encoding: JSONEncoding.default, headers: nil)
                 .validate()
                 .response { response in
                     print("=>> Fetch! Start")
