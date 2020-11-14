@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import RxSwift
 
 struct SearchView: View {
     @ObservedObject private var githubViewModel = GithubViewModel()
+    
     @State private var hasTitle = true
     @State private var searchKeyword: String = ""
     

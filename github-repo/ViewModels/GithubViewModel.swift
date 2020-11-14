@@ -24,6 +24,8 @@ class GithubViewModel: ObservableObject {
     @Published var contributorsErrorMessage: String = ""
     @Published var contributorsIsLoading: Bool = false
     
+    private let disposeBag = DisposeBag()
+    
     func fetchProfile(username: String) {
         self.profileIsLoading = true
         githubService.getProfileByUsername(username)
@@ -38,7 +40,8 @@ class GithubViewModel: ObservableObject {
                 onCompleted: {
                     self.profileIsLoading = false
                 }
-        )
+            )
+            .disposed(by: disposeBag)
     }
     
     func fetchRepoByUsername(username: String) {
@@ -55,7 +58,7 @@ class GithubViewModel: ObservableObject {
                 onCompleted: {
                     self.repositoriesIsLoading = false
                 }
-        )
+        ).disposed(by: disposeBag)
     }
     
     func fetchContributor(username: String, repoName: String) {
@@ -75,7 +78,7 @@ class GithubViewModel: ObservableObject {
                 onCompleted: {
                     self.contributorsIsLoading = false
                 }
-        )
+        ).disposed(by: disposeBag)
     }
     
     
