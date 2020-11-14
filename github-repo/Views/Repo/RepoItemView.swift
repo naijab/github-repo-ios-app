@@ -8,31 +8,35 @@
 import SwiftUI
 
 struct RepoItemView: View {
-    let title: String
-    let stars: String
+    
+    let repo: GithubRepository
+
+    init(repo: GithubRepository) {
+        self.repo = repo
+        print(repo)
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: nil, content: {
-            Text(title)
+            Text(repo.name)
                 .foregroundColor(Color.primary)
                 .font(.title)
                 .bold()
           
-                
-            Text(stars)
-                .foregroundColor(Color.gray)
+//            Text(\.repo.stargazersCount)
+//                .foregroundColor(Color.gray)
             
-            ScrollView (.horizontal, showsIndicators: false) {
-                HStack {
-                    ContributorItem(title: "Apple", avatar: "https://picsum.photos/200/300")
-                    ContributorItem(title: "Apple 2", avatar: "https://picsum.photos/200/300")
-                    ContributorItem(title: "Apple 3", avatar: "https://picsum.photos/200/300")
-                    ContributorItem(title: "Apple 3", avatar: "https://picsum.photos/200/300")
-                    ContributorItem(title: "Apple 3", avatar: "https://picsum.photos/200/300")
-                    ContributorItem(title: "Apple 3", avatar: "https://picsum.photos/200/300")
-                }
-            }
-            .frame(height: 120)
+//            ScrollView (.horizontal, showsIndicators: false) {
+//                HStack {
+//                    ContributorItem(title: "Apple", avatar: "https://picsum.photos/200/300")
+//                    ContributorItem(title: "Apple 2", avatar: "https://picsum.photos/200/300")
+//                    ContributorItem(title: "Apple 3", avatar: "https://picsum.photos/200/300")
+//                    ContributorItem(title: "Apple 3", avatar: "https://picsum.photos/200/300")
+//                    ContributorItem(title: "Apple 3", avatar: "https://picsum.photos/200/300")
+//                    ContributorItem(title: "Apple 3", avatar: "https://picsum.photos/200/300")
+//                }
+//            }
+//            .frame(height: 120)
         })
         .cornerRadius(10)
         .padding(.vertical, 10)
@@ -46,8 +50,10 @@ struct RepoItemView: View {
     }
 }
 
-struct RepoItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        RepoItemView(title: "Repo", stars: "23")
-    }
-}
+//struct RepoItemView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RepoItemView(repo: GithubRepositor(
+//        
+//        ))
+//    }
+//}
