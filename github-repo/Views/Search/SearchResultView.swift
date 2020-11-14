@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SearchResultView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @ObservedObject private var githubViewModel = GithubViewModel()
 
@@ -19,7 +20,7 @@ struct SearchResultView: View {
     
     var body: some View {
         NavigationView {
-            VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
+            VStack(alignment: .center) {
                 if (githubViewModel.repositoriesIsLoading) {
                     ProgressView()
                 }
@@ -29,21 +30,37 @@ struct SearchResultView: View {
                         .font(.subheadline)
                         .bold()
                         .foregroundColor(.red)
-                }
-                
-                ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false, content: {
-                    ForEach(githubViewModel.repositories, id: \.nodeID) { repo in
-                        RepoItemView(repo: repo)
-                            .padding(.bottom, 10)
+                } else {
+                    if (githubViewModel.repositories.count == 0) {
+                        Text("No repository")
+                            .font(.subheadline)
+                            .bold()
+                            .foregroundColor(.red)
+                    
+                    } else {
+                        ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false, content: {
+                            ForEach(githubViewModel.repositories, id: \.nodeID) { repo in
+                                RepoItemView(repo: repo)
+                                    .padding(.bottom, 10)
+                            }
+                        })
+                        .navigationBarHidden(true)
+                        .padding(.all, 10)
                     }
-                })
-                .padding(.horizontal, 10)
-                
-            }.onAppear {
-                self.githubViewModel.fetchRepoByUsername(username: keyword)
+                }
             }
         }
-        .navigationBarTitle(keyword)
+        .navigationBarTitle(githubViewModel.profile.login, displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+                Image(systemName: "arrow.left")
+        })
+        .onAppear {
+            self.githubViewModel.fetchProfile(username: keyword)
+            self.githubViewModel.fetchRepoByUsername(username: keyword)
+        }
     }
 }
 

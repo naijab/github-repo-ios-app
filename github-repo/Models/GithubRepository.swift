@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct GithubRepository: Codable, Hashable {
+struct GithubRepository: Identifiable, Codable, Hashable {
+    
     let id: Int
     let nodeID, name, fullName: String
     let githubRepositoryPrivate: Bool

@@ -9,6 +9,8 @@ import Foundation
 import RxSwift
 
 protocol GithubService {
+    func getProfileByUsername(_ username : String) -> Observable<GithubOwner>
+    
     func getRepoByUsername(
             _ username : String,
             page: Int,

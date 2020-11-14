@@ -7,19 +7,26 @@
 
 import Foundation
 
-struct GithubOwner: Codable, Hashable {
-    let login: String
-    let id: Int
-    let nodeID: String
-    let avatarURL: String
-    let gravatarID: String
-    let url, htmlURL, followersURL: String
-    let followingURL, gistsURL, starredURL: String
-    let subscriptionsURL, organizationsURL, reposURL: String
-    let eventsURL: String
-    let receivedEventsURL: String
-    let type: String
-    let siteAdmin: Bool
+struct GithubOwner: Identifiable, Codable, Hashable {
+    
+    var login: String = ""
+    var id: Int = 0
+    var nodeID: String = ""
+    var avatarURL: String = ""
+    var gravatarID: String = ""
+    var url: String  = ""
+    var htmlURL: String = ""
+    var followersURL: String = ""
+    var followingURL: String = ""
+    var gistsURL: String = ""
+    var starredURL: String = ""
+    var subscriptionsURL: String = ""
+    var organizationsURL: String = ""
+    var reposURL: String = ""
+    var eventsURL: String = ""
+    var receivedEventsURL: String = ""
+    var type: String = ""
+    var siteAdmin: Bool  = false
 
     enum CodingKeys: String, CodingKey {
         case login, id
@@ -40,4 +47,5 @@ struct GithubOwner: Codable, Hashable {
         case type
         case siteAdmin = "site_admin"
     }
+
 }
