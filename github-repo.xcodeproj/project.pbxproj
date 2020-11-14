@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,11 @@
 		AB4AE321255F35E000A66B2B /* GithubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE320255F35E000A66B2B /* GithubRepository.swift */; };
 		AB4AE326255F368300A66B2B /* JSONNull.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE325255F368300A66B2B /* JSONNull.swift */; };
 		AB4AE32E255F36A600A66B2B /* GithubOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE32D255F36A600A66B2B /* GithubOwner.swift */; };
+		AB4AE340255F3CF300A66B2B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AB4AE33F255F3CF300A66B2B /* Alamofire */; };
+		AB4AE346255F3D1900A66B2B /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE345255F3D1900A66B2B /* GithubService.swift */; };
+		AB4AE34F255F3EB600A66B2B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = AB4AE34E255F3EB600A66B2B /* RxCocoa */; };
+		AB4AE351255F3EB600A66B2B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AB4AE350255F3EB600A66B2B /* RxSwift */; };
+		AB4AE35E255F46F400A66B2B /* GithubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4AE35D255F46F400A66B2B /* GithubViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +68,8 @@
 		AB4AE320255F35E000A66B2B /* GithubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepository.swift; sourceTree = "<group>"; };
 		AB4AE325255F368300A66B2B /* JSONNull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNull.swift; sourceTree = "<group>"; };
 		AB4AE32D255F36A600A66B2B /* GithubOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubOwner.swift; sourceTree = "<group>"; };
+		AB4AE345255F3D1900A66B2B /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
+		AB4AE35D255F46F400A66B2B /* GithubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB4AE351255F3EB600A66B2B /* RxSwift in Frameworks */,
+				AB4AE34F255F3EB600A66B2B /* RxCocoa in Frameworks */,
+				AB4AE340255F3CF300A66B2B /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +123,7 @@
 		AB4AE2AA255F182400A66B2B /* github-repo */ = {
 			isa = PBXGroup;
 			children = (
+				AB4AE344255F3D0700A66B2B /* Services */,
 				AB4AE2F6255F232200A66B2B /* Utils */,
 				AB4AE2E2255F1A1A00A66B2B /* Views */,
 				AB4AE2E1255F1A1100A66B2B /* Models */,
@@ -153,6 +164,7 @@
 		AB4AE2E0255F1A0900A66B2B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AB4AE35D255F46F400A66B2B /* GithubViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -213,6 +225,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		AB4AE344255F3D0700A66B2B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AB4AE345255F3D1900A66B2B /* GithubService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -229,6 +249,11 @@
 			dependencies = (
 			);
 			name = "github-repo";
+			packageProductDependencies = (
+				AB4AE33F255F3CF300A66B2B /* Alamofire */,
+				AB4AE34E255F3EB600A66B2B /* RxCocoa */,
+				AB4AE350255F3EB600A66B2B /* RxSwift */,
+			);
 			productName = "github-repo";
 			productReference = AB4AE2A8255F182400A66B2B /* github-repo.app */;
 			productType = "com.apple.product-type.application";
@@ -300,6 +325,10 @@
 				Base,
 			);
 			mainGroup = AB4AE29F255F182400A66B2B;
+			packageReferences = (
+				AB4AE33E255F3CF300A66B2B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				AB4AE34D255F3EB600A66B2B /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = AB4AE2A9255F182400A66B2B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -344,6 +373,8 @@
 			files = (
 				AB4AE2EA255F1AD100A66B2B /* SearchView.swift in Sources */,
 				AB4AE2F8255F233000A66B2B /* Color.swift in Sources */,
+				AB4AE346255F3D1900A66B2B /* GithubService.swift in Sources */,
+				AB4AE35E255F46F400A66B2B /* GithubViewModel.swift in Sources */,
 				AB4AE326255F368300A66B2B /* JSONNull.swift in Sources */,
 				AB4AE311255F2A9400A66B2B /* RemoteImage.swift in Sources */,
 				AB4AE321255F35E000A66B2B /* GithubRepository.swift in Sources */,
@@ -521,7 +552,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.naijab.github-repo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -542,7 +573,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.naijab.github-repo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -666,6 +697,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AB4AE33E255F3CF300A66B2B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+		AB4AE34D255F3EB600A66B2B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:ReactiveX/RxSwift.git";
+			requirement = {
+				kind = exactVersion;
+				version = "6.0.0-rc.1";
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AB4AE33F255F3CF300A66B2B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB4AE33E255F3CF300A66B2B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		AB4AE34E255F3EB600A66B2B /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB4AE34D255F3EB600A66B2B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		AB4AE350255F3EB600A66B2B /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB4AE34D255F3EB600A66B2B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AB4AE2A0255F182400A66B2B /* Project object */;
 }
