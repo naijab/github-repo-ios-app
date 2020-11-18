@@ -47,15 +47,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AB4AE2A8255F182400A66B2B /* github-repo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "github-repo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB4AE2A8255F182400A66B2B /* Github Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Github Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4AE2AB255F182400A66B2B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		AB4AE2AF255F182500A66B2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB4AE2B2255F182500A66B2B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB4AE2B4255F182500A66B2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB4AE2B9255F182500A66B2B /* github-repoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "github-repoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB4AE2B9255F182500A66B2B /* Github FinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Github FinderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4AE2BD255F182500A66B2B /* github_repoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = github_repoTests.swift; sourceTree = "<group>"; };
 		AB4AE2BF255F182500A66B2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB4AE2C4255F182500A66B2B /* github-repoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "github-repoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB4AE2C4255F182500A66B2B /* Github FinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Github FinderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4AE2C8255F182500A66B2B /* github_repoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = github_repoUITests.swift; sourceTree = "<group>"; };
 		AB4AE2CA255F182500A66B2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB4AE2E9255F1AD100A66B2B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -113,9 +113,9 @@
 		AB4AE2A9255F182400A66B2B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AB4AE2A8255F182400A66B2B /* github-repo.app */,
-				AB4AE2B9255F182500A66B2B /* github-repoTests.xctest */,
-				AB4AE2C4255F182500A66B2B /* github-repoUITests.xctest */,
+				AB4AE2A8255F182400A66B2B /* Github Finder.app */,
+				AB4AE2B9255F182500A66B2B /* Github FinderTests.xctest */,
+				AB4AE2C4255F182500A66B2B /* Github FinderUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,9 +252,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AB4AE2A7255F182400A66B2B /* github-repo */ = {
+		AB4AE2A7255F182400A66B2B /* Github Finder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AB4AE2CD255F182500A66B2B /* Build configuration list for PBXNativeTarget "github-repo" */;
+			buildConfigurationList = AB4AE2CD255F182500A66B2B /* Build configuration list for PBXNativeTarget "Github Finder" */;
 			buildPhases = (
 				AB4AE2A4255F182400A66B2B /* Sources */,
 				AB4AE2A5255F182400A66B2B /* Frameworks */,
@@ -264,19 +264,19 @@
 			);
 			dependencies = (
 			);
-			name = "github-repo";
+			name = "Github Finder";
 			packageProductDependencies = (
 				AB4AE33F255F3CF300A66B2B /* Alamofire */,
 				AB4AE34E255F3EB600A66B2B /* RxCocoa */,
 				AB4AE350255F3EB600A66B2B /* RxSwift */,
 			);
 			productName = "github-repo";
-			productReference = AB4AE2A8255F182400A66B2B /* github-repo.app */;
+			productReference = AB4AE2A8255F182400A66B2B /* Github Finder.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AB4AE2B8255F182500A66B2B /* github-repoTests */ = {
+		AB4AE2B8255F182500A66B2B /* Github FinderTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AB4AE2D0255F182500A66B2B /* Build configuration list for PBXNativeTarget "github-repoTests" */;
+			buildConfigurationList = AB4AE2D0255F182500A66B2B /* Build configuration list for PBXNativeTarget "Github FinderTests" */;
 			buildPhases = (
 				AB4AE2B5255F182500A66B2B /* Sources */,
 				AB4AE2B6255F182500A66B2B /* Frameworks */,
@@ -287,14 +287,14 @@
 			dependencies = (
 				AB4AE2BB255F182500A66B2B /* PBXTargetDependency */,
 			);
-			name = "github-repoTests";
+			name = "Github FinderTests";
 			productName = "github-repoTests";
-			productReference = AB4AE2B9255F182500A66B2B /* github-repoTests.xctest */;
+			productReference = AB4AE2B9255F182500A66B2B /* Github FinderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AB4AE2C3255F182500A66B2B /* github-repoUITests */ = {
+		AB4AE2C3255F182500A66B2B /* Github FinderUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AB4AE2D3255F182500A66B2B /* Build configuration list for PBXNativeTarget "github-repoUITests" */;
+			buildConfigurationList = AB4AE2D3255F182500A66B2B /* Build configuration list for PBXNativeTarget "Github FinderUITests" */;
 			buildPhases = (
 				AB4AE2C0255F182500A66B2B /* Sources */,
 				AB4AE2C1255F182500A66B2B /* Frameworks */,
@@ -305,9 +305,9 @@
 			dependencies = (
 				AB4AE2C6255F182500A66B2B /* PBXTargetDependency */,
 			);
-			name = "github-repoUITests";
+			name = "Github FinderUITests";
 			productName = "github-repoUITests";
-			productReference = AB4AE2C4255F182500A66B2B /* github-repoUITests.xctest */;
+			productReference = AB4AE2C4255F182500A66B2B /* Github FinderUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -332,7 +332,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AB4AE2A3255F182400A66B2B /* Build configuration list for PBXProject "github-repo" */;
+			buildConfigurationList = AB4AE2A3255F182400A66B2B /* Build configuration list for PBXProject "Github Finder" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -349,9 +349,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AB4AE2A7255F182400A66B2B /* github-repo */,
-				AB4AE2B8255F182500A66B2B /* github-repoTests */,
-				AB4AE2C3255F182500A66B2B /* github-repoUITests */,
+				AB4AE2A7255F182400A66B2B /* Github Finder */,
+				AB4AE2B8255F182500A66B2B /* Github FinderTests */,
+				AB4AE2C3255F182500A66B2B /* Github FinderUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -424,12 +424,12 @@
 /* Begin PBXTargetDependency section */
 		AB4AE2BB255F182500A66B2B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AB4AE2A7255F182400A66B2B /* github-repo */;
+			target = AB4AE2A7255F182400A66B2B /* Github Finder */;
 			targetProxy = AB4AE2BA255F182500A66B2B /* PBXContainerItemProxy */;
 		};
 		AB4AE2C6255F182500A66B2B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AB4AE2A7255F182400A66B2B /* github-repo */;
+			target = AB4AE2A7255F182400A66B2B /* Github Finder */;
 			targetProxy = AB4AE2C5255F182500A66B2B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -610,7 +610,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/github-repo.app/github-repo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Github Finder.app/Github Finder";
 			};
 			name = Debug;
 		};
@@ -631,7 +631,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/github-repo.app/github-repo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Github Finder.app/Github Finder";
 			};
 			name = Release;
 		};
@@ -676,7 +676,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AB4AE2A3255F182400A66B2B /* Build configuration list for PBXProject "github-repo" */ = {
+		AB4AE2A3255F182400A66B2B /* Build configuration list for PBXProject "Github Finder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB4AE2CB255F182500A66B2B /* Debug */,
@@ -685,7 +685,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AB4AE2CD255F182500A66B2B /* Build configuration list for PBXNativeTarget "github-repo" */ = {
+		AB4AE2CD255F182500A66B2B /* Build configuration list for PBXNativeTarget "Github Finder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB4AE2CE255F182500A66B2B /* Debug */,
@@ -694,7 +694,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AB4AE2D0255F182500A66B2B /* Build configuration list for PBXNativeTarget "github-repoTests" */ = {
+		AB4AE2D0255F182500A66B2B /* Build configuration list for PBXNativeTarget "Github FinderTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB4AE2D1255F182500A66B2B /* Debug */,
@@ -703,7 +703,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AB4AE2D3255F182500A66B2B /* Build configuration list for PBXNativeTarget "github-repoUITests" */ = {
+		AB4AE2D3255F182500A66B2B /* Build configuration list for PBXNativeTarget "Github FinderUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB4AE2D4255F182500A66B2B /* Debug */,
